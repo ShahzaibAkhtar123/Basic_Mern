@@ -6,11 +6,17 @@ var logger = require('morgan');
 const mongoose = require('mongoose');
 const passport = require('passport');
 const { Strategy } = require('passport-local');
+const CryptoJS = require('crypto-js');
+
+
+
+
 
 // var indexRouter = require('./routes/index');
 const { userRoutes, adminRoutes, clientRoutes } = require('./routes');
 
 const authMiddleware = require('./middlewares/authMiddleware');
+const { signup } = require('./beans/common');
 //var usersRouter = require('./routes/userRoutes');
 
 var app = express();
@@ -42,6 +48,8 @@ passport.use(
 
 //actual Routes
 app.post('/signup', authMiddleware.userSignup);
+
+
 app.post(
   '/login',
   passport.initialize(),

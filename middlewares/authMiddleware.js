@@ -3,6 +3,7 @@
 const { sign, verify } = require('jsonwebtoken');
 const { signup } = require('../beans/common');
 const { usersControllers, adminControllers } = require('../controllers');
+const CryptoJS = require('crypto-js');
 //const {user} = require('../models/users');
 
 //executelogin function
@@ -51,9 +52,27 @@ const respond = async (req, res, next) => {
   res.status(200).send(result);
 };
 
+// const signupp = async (body) => {
+//   // generate a random salt
+// const salt = CryptoJS.lib.WordArray.random(128/8);
+// // hash the password with the salt
+// const hash = CryptoJS.PBKDF2(req.body.password, salt, { keySize: 512/32 });
+// // save the user to the database with the hashed password and salt
+// const user = new signup({
+//   username: req.body.userName,
+//   password: hash.toString(),
+//   salt: salt.toString()
+// });
+//   const result = await user.save();
+//   return result;
+// };
 //signup function
 const userSignup = async (req, res, next) => {
+  
+  
   const body = req.body;
+  
+    
   //promise is used when we want to send data to other functions/files
   try {
     const result = await signup(body);

@@ -1,6 +1,7 @@
 //import packages
 //const { default: mongoose } = require('mongoose');
 const mongoose = require('mongoose'); //mongoose is a package and schema is constructor.
+const bcrypt = require('bcrypt');
 //schema is constructor
 //table columns are in schema
 //must be two roles for client and admin
@@ -30,4 +31,7 @@ const usersSchema = new mongoose.Schema(
     //users are the name of table
   }
 );
+
+
+
 module.exports = mongoose.model('users', usersSchema);
