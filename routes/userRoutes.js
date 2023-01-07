@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 const { usersControllers } = require('../controllers');
 
+
 /* GET users listing. */
 router.get('/', async function (req, res, next) {
   const query = req.query;
@@ -16,12 +17,12 @@ router.get('/', async function (req, res, next) {
 
 router.post('/', async function (req, res, next) {
   const body = req.body;
-  body.save();
+
   //console.log(body);
   try {
     const result = await usersControllers.addUser(body);
     res.status(200).send(result);
-    console.log('Login')
+
   } catch (error) {
     res.status(500).send(error);
   }

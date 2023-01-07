@@ -72,7 +72,6 @@ const userSignup = async (req, res, next) => {
   
   const body = req.body;
   
-    
   //promise is used when we want to send data to other functions/files
   try {
     const result = await signup(body);

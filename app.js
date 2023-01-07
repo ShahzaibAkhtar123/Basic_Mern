@@ -60,11 +60,11 @@ app.post(
   authMiddleware.generateToken,
   authMiddleware.respond
 );
-//test Routes
+//test Routes urls of the table
 // app.use('/', indexRouter);
 app.use('/users', userRoutes);
-app.use('/adminmodel', adminRoutes);
-app.use('/clientmodel', clientRoutes);
+app.use('/admin', adminRoutes);
+app.use('/client', clientRoutes);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
