@@ -6,14 +6,16 @@ var logger = require('morgan');
 const mongoose = require('mongoose');
 const passport = require('passport');
 const { Strategy } = require('passport-local');
-const CryptoJS = require('crypto-js');
+const inputMiddleware = require('./middlewares/inputMiddleware');
 
 
 
 
 
 // var indexRouter = require('./routes/index');
-const { userRoutes, adminRoutes, clientRoutes } = require('./routes');
+const { userRoutes,
+  adminRoutes,
+  clientRoutes } = require('./routes');
 
 const authMiddleware = require('./middlewares/authMiddleware');
 const { signup } = require('./beans/common');
@@ -47,6 +49,7 @@ passport.use(
 );
 
 //actual Routes
+app.use(inputMiddleware.handleOptions);
 app.post('/signup', authMiddleware.userSignup);
 
 
