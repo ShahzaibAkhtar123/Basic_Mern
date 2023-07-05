@@ -19,7 +19,7 @@
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^6.8.0",
     "morgan": "~1.9.1",
-    "nanoid": "^4.0.0",
+    "nanoid": "^4.0.2",
     "passport": "^0.6.0",
     "passport-local": "^1.0.0"
   }
