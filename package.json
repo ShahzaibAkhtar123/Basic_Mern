@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "bcrpyt": "^2.0.0",
-    "bcrypt": "^5.1.0",
+    "bcrypt": "^6.0.0",
     "cookie-parser": "~1.4.4",
     "crpyto-js": "^0.0.1-security",
     "crypto-js": "^4.1.1",
